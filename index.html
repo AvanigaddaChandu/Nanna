@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My dear Chinnu💕</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppings',cursive}
+body{height:100vh;overflow:hidden}
+
+/* 🌈 Animated Background */
+.bg{
+  position:absolute;inset:0;
+  background:linear-gradient(120deg,#ffd1dc,#fff1c1,#e0f7fa,#ffe4ec);
+  background-size:400% 400%;
+  animation:bgMove 20s ease infinite;
+}
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* 💕 Floating Hearts & Bubbles */
+.effects span,.word{
+  position:absolute;
+  animation:floatUp linear infinite;
+  opacity:.7;
+}
+@keyframes floatUp{
+  from{transform:translateY(110vh);opacity:0}
+  20%{opacity:1}
+  to{transform:translateY(-10vh);opacity:0}
+}
+.word{color:#e86a92;font-size:14px;opacity:.3}
+
+/* 🌳 Heart Trees */
+.tree{position:absolute;width:120px;height:220px}
+.trunk{
+  position:absolute;bottom:0;left:50%;
+  width:18px;height:90px;
+  background:#8b5a2b;border-radius:10px;
+  transform:translateX(-50%);
+}
+.leaf{
+  position:absolute;width:18px;height:18px;
+  background:#ff6f91;transform:rotate(-45deg);
+  animation:pulse 4s infinite;
+}
+.leaf::before,.leaf::after{
+  content:'';position:absolute;
+  width:18px;height:18px;
+  background:#ff6f91;border-radius:50%;
+}
+.leaf::before{top:-9px;left:0}
+.leaf::after{left:9px;top:0}
+@keyframes pulse{
+  0%,100%{transform:scale(1) rotate(-45deg)}
+  50%{transform:scale(1.2) rotate(-45deg)}
+}
+
+/* 📄 Pages */
+.page{position:absolute;inset:0}
+.center{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+}
+
+/* 🌸 Page 1 Text */
+.small{
+  font-size:18px;color:#555;margin-bottom:10px;
+  animation:slideIn 1.8s ease forwards;
+}
+.main{
+  font-size:46px;color:#e86a92;
+  text-shadow:0 0 15px #ffc1d6;
+  animation:slideBubble 2.5s ease forwards;
+}
+@keyframes slideIn{
+  from{opacity:0;transform:translateX(-40px)}
+  to{opacity:1;transform:translateX(0)}
+}
+@keyframes slideBubble{
+  0%{opacity:0;transform:translateY(30px) scale(.9)}
+  60%{opacity:1;transform:translateY(-5px) scale(1.05)}
+  100%{transform:translateY(0) scale(1)}
+}
+
+/* Buttons */
+.buttons{margin-top:30px}
+.buttons button{
+  padding:14px 34px;margin:10px;
+  border:none;border-radius:30px;
+  background:#e86a92;color:white;
+  font-size:17px;cursor:pointer;
+  transition:.3s;
+}
+.buttons button:hover{
+  transform:scale(1.15);
+  background:#d94b78;
+}
+
+/* 💌 Page 2 */
+.page-two{
+  display:none;
+  background:
+    linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.55)),
+    url("WhatsApp Image 2026-02-08 at 5.30.31 PM.jpeg") center/cover no-repeat;
+  overflow-y:auto;
+}
+
+/* ❤️ HEARTBEAT + SHIMMER TEXT BOX */
+.text-box{
+  max-width:850px;
+  margin:50px auto;
+  padding:30px;
+  border-radius:20px;
+  background:
+    linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,.45)),
+    url("together.jpeg") center/cover no-repeat;
+  backdrop-filter: blur(6px);
+  border:4px solid transparent;
+  border-image: linear-gradient(45deg,#ff6f91,#ffd1dc,#f6c1cc) 1;
+  animation: heartBeat 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 💓 Heartbeat */
+@keyframes heartBeat{
+  0%{transform:scale(1)}
+  20%{transform:scale(1.03)}
+  40%{transform:scale(1)}
+  60%{transform:scale(1.03)}
+  100%{transform:scale(1)}
+}
+
+/* ✨ SHIMMER OVER TEXT */
+.text-box::after{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;
+  width:100%;height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,182,193,0.35),
+    transparent
+  );
+  animation:shimmer 6s ease-in-out infinite;
+}
+@keyframes shimmer{
+  0%{left:-100%}
+  50%{left:100%}
+  100%{left:100%}
+}
+
+.end{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:36px;
+  font-weight:600;
+  color:#c40909;
+  letter-spacing:1px;
+  margin-bottom:20px;">
+}
+
+/* 💥 Heart Fire Effect */
+.fire-heart{
+  position:absolute;
+  font-size:22px;
+  animation:fire 1.2s ease-out forwards;
+}
+@keyframes fire{
+  0%{transform:scale(.5) translateY(0);opacity:1}
+  100%{transform:scale(1.8) translateY(-120px);opacity:0}
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .main{font-size:30px}
+  .text-box{margin:20px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="effects"></div>
+
+<!-- 🌳 Trees -->
+<div class="tree" style="top:20px;left:20px">
+  <div class="trunk"></div>
+  <div class="leaf" style="top:40px;left:20px"></div>
+  <div class="leaf" style="top:20px;left:45px"></div>
+  <div class="leaf" style="top:40px;left:70px"></div>
+  <div class="leaf" style="top:65px;left:45px"></div>
+</div>
+
+<div class="tree" style="bottom:20px;right:20px">
+  <div class="trunk"></div>
+  <div class="leaf" style="top:40px;left:20px"></div>
+  <div class="leaf" style="top:20px;left:45px"></div>
+  <div class="leaf" style="top:40px;left:70px"></div>
+  <div class="leaf" style="top:65px;left:45px"></div>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page" id="p1">
+  <div class="center">
+    <div class="small">I am proposing you with my whole heart..!</div>
+    <div class="main">I LOVEE YOUU NANNA 💕💘..!</div>
+    <div class="buttons">
+      <button onclick="go(event)">Accpet and Open my heart 💌</button>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page page-two" id="p2">
+  <div class="text-box">
+    <h2 style="
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:36px;
+  font-weight:600;
+  color:#c40909;
+  letter-spacing:1px;
+  margin-bottom:20px;">
+  HAPPY VALENTINES DAY..NANNA💕🫶
+</h2>
+</h2>
+    <br>
+    <p>
+ My Dear soulmate 💕..!
+<br>
+<br>
+My heart felt thousands of feelings when i am with you 💖and every moment we spent together  are the most precious and beautiful memories for me 🥰🤗..And I want those memorable moments life long with only you..💟💘I just want to spent my whole life with you with most beautiful memories.
+<br>
+<br>
+Every single time when we talk about our dreams and forever journey together i wish that could be true very fastly..!💞
+<br>
+<br>
+I remember  that you tell me i would be  your priority and every time you mentioned me in your prayers for being with you.Those 11:11 wishes come true and we will start our journey again with more happiness and cherishing moments together forever ♾️💝
+<br>
+<br>
+And i will telling you that i would choose you over anything and i will love you more than myself ❤️.. Because you're not an another person for me , our two souls are already matched and our most beautiful journey will be already written in destiny...!✨
+<br>
+<br>
+Just give your heart once again and i will hold it forever 💝🫶 and makes everytime happy   ♾️ till the end of my life with loyalty and care ..
+<br>
+<br>
+Let's start our new journey with lots of love and with more happy moments together and i wish our journey never ends till our last breathe and I loveee youuuuu so muchhhh Nannaaa 💟🥰🤍💌
+<br>
+<br>
+Finally, Let's be together forever with lots of love and i will never let you down down in any situation even though in my hard times also i will never leave you and i will always priotize youu.
+<br>
+<br>
+Forever yours and always with youu my loveee 💕💘
+    </p>
+    <div class="end">With my endless love 🥰💖</div>
+  </div>
+</div>
+
+<script>
+/* Background effects */
+const effects=document.querySelector('.effects');
+const words=["LOVE","FOREVER","YOU & ME"];
+
+setInterval(()=>{
+  const s=document.createElement('span');
+  s.innerHTML=Math.random()>.5?"💕":"🫧";
+  s.style.left=Math.random()*100+"vw";
+  s.style.fontSize=Math.random()*18+14+"px";
+  s.style.animationDuration=Math.random()*5+6+"s";
+  effects.appendChild(s);
+  setTimeout(()=>s.remove(),11000);
+},300);
+
+setInterval(()=>{
+  const w=document.createElement('div');
+  w.className='word';
+  w.innerText=words[Math.floor(Math.random()*words.length)];
+  w.style.left=Math.random()*100+"vw";
+  w.style.animationDuration="18s";
+  effects.appendChild(w);
+  setTimeout(()=>w.remove(),18000);
+},2500);
+
+/* Heart fire + page switch */
+function go(e){
+  for(let i=0;i<25;i++){
+    const h=document.createElement("div");
+    h.className="fire-heart";
+    h.innerHTML="💖";
+    h.style.left=(e.clientX-10+Math.random()*40)+"px";
+    h.style.top=(e.clientY-10+Math.random()*40)+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),1200);
+  }
+
+  setTimeout(()=>{
+    document.getElementById("p1").style.display="none";
+    document.getElementById("p2").style.display="block";
+  },800);
+}
+</script>
+
+</body>
+</html>
