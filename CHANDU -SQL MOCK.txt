@@ -1,0 +1,89 @@
+SQL MOCK -07/06/2026.
+========================
+
+1.SELCT HIREDATE 
+FROM EMP 
+GROUP BY HIREDATE
+WHERE COUNT(*)=3;
+
+=================================================================
+
+2. SELECT *
+FROM EMP E1,EMP E2,EMP E3
+WHERE E1.MGRNO=E2.EMPID AND  E2.MGRNO=E3.EMPID E1.HIREDATE >E2.HIREDATE AND E1.SAL >E3.SAL,
+
+==================================================================
+
+3.
+SELECT DEPARTMENT,COUNT(EMPLOYEE_ID) AS TOTAL_NUMBER
+FROM EMPLOYEES
+GROUP BY DEPARMENT
+HAVING COUNT(EMPLOYEE_ID)>3
+
+
+==================================================================
+
+4. UPDATE EMP
+SET SAL=1400
+WHERE COMM IS NOT NULL;
+
+==================================================================
+
+5.SELECT EMP.*,SAL*12 AS ANNUAL_SALARY,SAL/2 AS HALF_TERM_SALARY,sal+SAL*10/100 AS INCREMENT
+FROM EMP
+WHERE TO_CHAR(hiredate,'YYYY') = '1981' AND COMM IS NOT NULL AND UPPER(ENAME) LIKE '%A%A%A';
+
+
+===================================================================
+6. CREATE TABLE CUSTOMERS
+(
+CID NUMBER,PRIMARYKEY,
+CNAME VARCHAR(50),NOTNULL,
+PH_NO NUMBER(10),PRIMARYKEY,CHECK(LEN(PH_C=10),
+OID VARCHAR(20), FOREIGN KEY
+);
+
+
+CREATE TABLE ORDERS
+(
+OID NUMBER(20),PRIMARY KEY,
+ONAME VARCHAR(30),NOT NULL,
+PRICE NUMBER(5),NOT NULL
+);
+
+
+ 
+
+
+===================================================================
+
+7. SELECT JOB,AVG(SALARY) AS AVG_SALARY
+FROM EMP
+WHERE HIREDATE>(SELCT HIREDATE FROM EMP WHERE JOB='CLERK')
+AND HIREDATE<(SELECT HIREDATE FROM EMP WHERE JOB='SALESMAN')
+AND MAX(SALARY)BETWEEN 1000 AND 5000;
+
+====================================================================
+
+8. SELECT SUBJECT,AVG(SCORE) AS AVERAGE_SCORE
+FROM GRADES
+GROUP BY SUBJECT 
+HAVING AVG(SCORE)>80;
+
+====================================================================
+
+9.SELECT *
+FROM EMP
+WHERE UPPER(SUBSTR(ENAME,1,1)) IN ('A','E','I','O','U')
+AND UPPER(SUBSTR(ENAME,-1,1)) IN ('A','E','I','O','U');
+
+========================================================================
+10.SELECT DISTINCT D.DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO
+AND E.SAL = ( SELECT MAX(SAL)
+FRom
+
+
+
+
